@@ -13,3 +13,18 @@ class Umamusume(ABC):
     @abstractmethod
     def thumbnail(self):
         pass
+
+    @property
+    @abstractmethod
+    def next_button(self):
+        pass
+
+    @property
+    @abstractmethod
+    def race_button(self):
+        pass
+
+    @property
+    @abstractmethod
+    def training_completion_button(self):
+        pass
