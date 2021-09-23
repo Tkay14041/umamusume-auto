@@ -4,6 +4,7 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
+android-auto-play-opencv = "*"
 
 [dev-packages]
 
