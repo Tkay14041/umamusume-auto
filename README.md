@@ -16,6 +16,7 @@ pipenv run python main.py
 ```
 
 ## What this Python script can do
-* start *Umamusume* application
-* start Aoharu training(アオハルトレーニング) with random parents(継承ウマ娘) and random support cards
+* Start *Umamusume* application
+* Start *Aoharu* training(アオハルトレーニング) with random parents(継承ウマ娘) and random support cards
+* Going out in all the training so that the training can finish ASAP and increment the training count to complete missions
 * Playable character: *Mejiro McQueen(メジロマックイーン)*
