@@ -31,7 +31,7 @@ class Util:
                 touched = True
                 aapo.sleep(0.5)
             else:
-                print(f'image not found: {image.path}')
+                print(f'image not found: {image.path}, score: {aapo.mtl.maxVal}')
                 count += 1
                 if count == MAX_COUNT:
                     print('touch_image: reached MAX_COUNT')
@@ -46,6 +46,7 @@ class Util:
             for screen in screens:
                 if aapo.chkImg(screen.image.str_path):
                     return screen
+                print(f'{screen.__class__.__name__}, score: {aapo.mtl.maxVal}')
             count += 1
             aapo.sleep(0.5)
         print('get_current_screen: reached MAX_COUNT')

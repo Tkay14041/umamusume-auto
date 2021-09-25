@@ -5,12 +5,13 @@ from screen.screen import Screen
 
 class GoingOut(Screen):
 
-    def __init__(self):
+    def __init__(self, training_home: Image):
+        self._image = training_home
         self._button = Image('resources/image/training/going_out.png')
 
     @property
     def image(self):
-        return self._button
+        return self._image
 
     @property
     def button(self):

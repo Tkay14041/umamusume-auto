@@ -16,6 +16,11 @@ class Umamusume(ABC):
 
     @property
     @abstractmethod
+    def training_home(self):
+        pass
+
+    @property
+    @abstractmethod
     def next_button(self):
         pass
 
