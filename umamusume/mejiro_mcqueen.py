@@ -8,7 +8,6 @@ class MejiroMcQueen(Umamusume):
     def __init__(self):
         self._name = 'メジロマックイーン'
         self._thumbnail = Image('resources/image/umamusume/mejiro_mcqueen/thumbnail.jpg')
-        self._training_home = Image('resources/image/umamusume/mejiro_mcqueen/training_home.jpg')
         self._next_button = Image('resources/image/umamusume/mejiro_mcqueen/next_button.jpg')
         self._race_button = Image('resources/image/umamusume/mejiro_mcqueen/race_button.jpg')
         self._training_completion_button = Image('resources/image/umamusume/mejiro_mcqueen/training_complete_button.jpg')
@@ -20,10 +19,6 @@ class MejiroMcQueen(Umamusume):
     @property
     def thumbnail(self):
         return self._thumbnail
-
-    @property
-    def training_home(self):
-        return self._training_home
 
     @property
     def next_button(self):

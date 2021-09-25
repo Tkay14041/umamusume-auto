@@ -11,7 +11,7 @@ class Training:
 
     def __init__(self, umamusume: Umamusume):
         self.umamusume = umamusume
-        self.screens = [GoingOut(umamusume.training_home),
+        self.screens = [GoingOut(),
                         OptionSelection(),
                         FanNotEnough(),
                         BeforeRace(umamusume.race_button),
