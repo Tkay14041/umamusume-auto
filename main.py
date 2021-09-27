@@ -2,7 +2,7 @@
 from image.images import Images
 from training.training import Training
 from training.training_mode import TrainingMode
-from umamusume.mejiro_mcqueen import MejiroMcQueen
+from umamusume.umamusume import Umamusume
 from util import Util
 
 
@@ -10,9 +10,19 @@ class Main:
 
     def __init__(self):
         self.training_mode = TrainingMode.AOHARU
-        self.target_umamusume = MejiroMcQueen()
+        self.target_umamusume = self.get_target_umamusume('mejiro_mcqueen')
         self.images = Images()
         self.training = Training(self.target_umamusume)
+
+    @staticmethod
+    def get_target_umamusume(name: str):
+        try:
+            target = Umamusume(name)
+        except AssertionError:
+            print(f'No such Umamusume: {name}')
+            exit(1)
+        else:
+            return target
 
     def execute(self):
         Util.start_app()

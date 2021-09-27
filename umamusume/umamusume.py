@@ -1,30 +1,36 @@
 # -*- coding: utf-8 -*-
-from abc import ABC, abstractmethod
+from pathlib import Path
+
+from image.image import Image
 
 
-class Umamusume(ABC):
+class Umamusume:
+
+    def __init__(self, name: str):
+        self._name = name
+        image_path = Path('resources/image/umamusume').joinpath(self._name)
+        assert image_path.is_dir()
+        self._thumbnail = Image(str(image_path.joinpath('thumbnail.jpg')))
+        self._next_button = Image(str(image_path.joinpath('next_button.jpg')))
+        self._race_button = Image(str(image_path.joinpath('race_button.jpg')))
+        self._training_completion_button = Image(str(image_path.joinpath('training_completion_button.jpg')))
 
     @property
-    @abstractmethod
     def name(self):
-        pass
+        return self._name
 
     @property
-    @abstractmethod
     def thumbnail(self):
-        pass
+        return self._thumbnail
 
     @property
-    @abstractmethod
     def next_button(self):
-        pass
+        return self._next_button
 
     @property
-    @abstractmethod
     def race_button(self):
-        pass
+        return self._race_button
 
     @property
-    @abstractmethod
     def training_completion_button(self):
-        pass
+        return self._training_completion_button
