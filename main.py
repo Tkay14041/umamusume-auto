@@ -1,4 +1,6 @@
 # -*- coding: utf-8 -*-
+import sys
+
 from image.images import Images
 from training.training import Training
 from training.training_mode import TrainingMode
@@ -8,9 +10,9 @@ from util import Util
 
 class Main:
 
-    def __init__(self):
+    def __init__(self, name: str):
         self.training_mode = TrainingMode.AOHARU
-        self.target_umamusume = self.get_target_umamusume('mejiro_mcqueen')
+        self.target_umamusume = self.get_target_umamusume(name)
         self.images = Images()
         self.training = Training(self.target_umamusume)
 
@@ -59,5 +61,10 @@ class Main:
 
 
 if __name__ == '__main__':
-    main = Main()
+    args = sys.argv
+    if not len(args) == 2:
+        print('Invalid arguments.')
+        exit(1)
+    umamusume_name = args[1]
+    main = Main(umamusume_name)
     main.execute()
